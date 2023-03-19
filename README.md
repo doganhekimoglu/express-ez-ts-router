@@ -1,3 +1,6 @@
+[![Version][npm-version]][npm-url]&nbsp;&nbsp;
+[![Typescript][npm-typescript]][npm-url]&nbsp;&nbsp;
+[![License][github-license]][github-license-url]&nbsp;&nbsp;
 
 **Easy to use Typescript decorators for creating Express.js routes**
 
@@ -105,3 +108,9 @@ class MainController {
 |                             UseSubRouter                             |                       Attach a sub router to a controller or to another sub router                        |
 |                                 Use                                 |     Attach middleware function to a specific route handler, multiple middlewares can be attached to       |
 | Method Decorators: Get, Post, Put, Delete, Patch, Head, Options, Connect, Trace | Turn class method of a controller or sub router into a route handler with one of the http request methods |
+
+[npm-url]: https://www.npmjs.com/package/express-ez-ts-router
+[npm-version]: https://img.shields.io/npm/v/express-ez-ts-router
+[github-license]: https://img.shields.io/npm/l/express-ez-ts-router
+[github-license-url]: https://github.com/doganhekimoglu/express-ez-ts-router/blob/master/LICENSE
+[npm-typescript]: https://img.shields.io/npm/types/express-ez-ts-router
