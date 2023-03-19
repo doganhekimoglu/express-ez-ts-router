@@ -1,4 +1,3 @@
-import 'reflect-metadata';
 import { Methods } from './enums/Methods';
 import { MetadataKeys } from './enums/MetadataKeys';
 

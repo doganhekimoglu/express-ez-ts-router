@@ -1,4 +1,3 @@
-import 'reflect-metadata';
 import { MetadataKeys } from './enums/MetadataKeys';
 import { Router } from '../router';
 import { Methods } from './enums/Methods';

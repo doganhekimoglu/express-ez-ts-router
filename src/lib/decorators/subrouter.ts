@@ -1,4 +1,3 @@
-import 'reflect-metadata';
 import { MetadataKeys } from './enums/MetadataKeys';
 
 export function SubRouter(path: string) {
