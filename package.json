@@ -1,6 +1,6 @@
 {
   "name": "express-ez-ts-router",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Easy to use Typescript decorators for creating Express.js routes",
   "main": "./dist/cjs/index.js",
   "module": "./dist/cjs/index.js",
@@ -28,7 +28,8 @@
     "decorator",
     "router",
     "ts",
-    "controller"
+    "controller",
+    "nodejs"
   ],
   "author": "Doğan Hekimoğlu (doganhekimoglu)",
   "license": "MIT",

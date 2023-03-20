@@ -101,13 +101,13 @@ class MainController {
 }
 ```
 
-|                                   Decorators                                    |                                                Description                                                |
-|:-------------------------------------------------------------------------------:|:---------------------------------------------------------------------------------------------------------:|
-|                                Controller                                |                                Create a main controller with a main route                                 |
-|                                 SubRouter                                |               Create a sub router which can be attached to another sub router or controller               |
-|                             UseSubRouter                             |                       Attach a sub router to a controller or to another sub router                        |
-|                                 Use                                 |     Attach middleware function to a specific route handler, multiple middlewares can be attached to       |
-| Method Decorators: Get, Post, Put, Delete, Patch, Head, Options, Connect, Trace | Turn class method of a controller or sub router into a route handler with one of the http request methods |
+|                                   Decorators                                    |                                                               Description                                                               |
+|:-------------------------------------------------------------------------------:|:---------------------------------------------------------------------------------------------------------------------------------------:|
+|                                Controller                                |                                               Create a main controller with a main route                                                |
+|                                 SubRouter                                |                              Create a sub router which can be attached to another sub router or controller                              |
+|                             UseSubRouter                             | Attach a sub router to a controller or to another sub router, multiple sub routers can be attached to a single controller or sub router |
+|                                 Use                                 |         Attach middleware function to a specific route handler, multiple middlewares can be attached to a single route handler          |
+| Method Decorators: Get, Post, Put, Delete, Patch, Head, Options, Connect, Trace |                Turn class method of a controller or sub router into a route handler with one of the http request methods                |
 
 [npm-url]: https://www.npmjs.com/package/express-ez-ts-router
 [npm-version]: https://img.shields.io/npm/v/express-ez-ts-router
