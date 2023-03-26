@@ -6,13 +6,14 @@ import request from 'supertest';
 let server: any;
 let app: any;
 
-beforeAll(() => {
+beforeEach(() => {
   app = express();
-  app.use(Router.getRouter());
+  const router = express.Router();
+  app.use(Router.setRouter(router));
   server = app.listen(0);
 });
 
-afterAll(() => {
+afterEach(() => {
   server.close();
 });
 

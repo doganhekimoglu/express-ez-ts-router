@@ -10,4 +10,10 @@ export class Router {
 
     return Router.instance;
   }
+
+  static setRouter(router: express.Router) {
+    Router.instance = router;
+
+    return Router.instance;
+  }
 }
