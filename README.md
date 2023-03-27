@@ -1,5 +1,6 @@
 [![Version][npm-version]][npm-url]&nbsp;&nbsp;
 [![Typescript][npm-typescript]][npm-url]&nbsp;&nbsp;
+[![Build][github-build]][github-tests-url]&nbsp;&nbsp;
 [![License][github-license]][github-license-url]&nbsp;&nbsp;
 
 **Easy to use Typescript decorators for creating Express.js routes**
@@ -166,43 +167,43 @@ import { Get, Controller, Use, SubRouter, UseSubRouter } from "express-ez-ts-rou
 
 const notAuthorized = (req: Request, res: Response, next: NextFunction) => {
     res.status(401).json({});
-  };
+};
 
-  @SubRouter('/subroute3')
-  class SubRouter3 {
-    @Post('/login')
-    Login(req: Request, res: Response) {
-      res.status(200).json({});
-    }
+@SubRouter('/subroute3')
+class SubRouter3 {
+  @Post('/login')
+  Login(req: Request, res: Response) {
+    res.status(200).json({});
   }
+}
 
-  @SubRouter('/subroute2')
-  class SubRouter2 {
-    @Post('/login')
-    Login(req: Request, res: Response) {
-      res.status(200).json({});
-    }
+@SubRouter('/subroute2')
+class SubRouter2 {
+  @Post('/login')
+  Login(req: Request, res: Response) {
+    res.status(200).json({});
   }
+}
 
-  @SubRouter('/subroute1')
-  @UseSubRouter(SubRouter2)
-  @Use(notAuthorized)
-  class SubRouter1 {
-    @Post('/login')
-    Login(req: Request, res: Response) {
-      res.status(200).json({});
-    }
+@SubRouter('/subroute1')
+@UseSubRouter(SubRouter2)
+@Use(notAuthorized)
+class SubRouter1 {
+  @Post('/login')
+  Login(req: Request, res: Response) {
+    res.status(200).json({});
   }
+}
 
-  @Controller('/api')
-  @UseSubRouter(SubRouter1)
-  @UseSubRouter(SubRouter3)
-  class MainController {
-    @Post('/login')
-    Login(req: Request, res: Response) {
-      res.status(200).json({});
-    }
+@Controller('/api')
+@UseSubRouter(SubRouter1)
+@UseSubRouter(SubRouter3)
+class MainController {
+  @Post('/login')
+  Login(req: Request, res: Response) {
+    res.status(200).json({});
   }
+}
 /*
 /api/login expected status 200
 /api/subroute3/login expected status 200
@@ -212,15 +213,17 @@ Only the routes inside SubRouter1 and SubRouter2 will return with status 401
 */
 ```
 
-|                                   Decorators                                    |                                                                     Description                                                                     |
-|:-------------------------------------------------------------------------------:|:---------------------------------------------------------------------------------------------------------------------------------------------------:|
-|                                Controller                                |                                                     Create a main controller with a main route                                                      |
-|                                 SubRouter                                |                                    Create a sub router which can be attached to another sub router or controller                                    |
-|                             UseSubRouter                             |       Attach a sub router to a controller or to another sub router, multiple sub routers can be attached to a single controller or sub router       |
-|                                 Use                                 | Attach middleware function to a controller, sub router or a specific route handler, multiple middlewares can be attached to an object(see examples) |
-| Method Decorators: Get, Post, Put, Delete, Patch, Head, Options, Connect, Trace |                      Turn class method of a controller or sub router into a route handler with one of the http request methods                      |
+|                                   Decorators                                    |                                                                      Description                                                                      |
+|:-------------------------------------------------------------------------------:|:-----------------------------------------------------------------------------------------------------------------------------------------------------:|
+|                                Controller                                |                                                      Create a main controller with a main route                                                       |
+|                                 SubRouter                                |                                     Create a sub router which can be attached to another sub router or controller                                     |
+|                             UseSubRouter                             |        Attach a sub router to a controller or to another sub router, multiple sub routers can be attached to a single controller or sub router        |
+|                                 Use                                 | Attach middleware function to a controller, sub router or a specific request handler, multiple middlewares can be attached to an object(see examples) |
+| Method Decorators: Get, Post, Put, Delete, Patch, Head, Options, Connect, Trace |                      Turn class method of a controller or sub router into a request handler with one of the http request methods                      |
 
 [npm-url]: https://www.npmjs.com/package/express-ez-ts-router
+[github-tests-url]: https://github.com/doganhekimoglu/express-ez-ts-router/tree/master/tests
+[github-build]: https://img.shields.io/github/actions/workflow/status/doganhekimoglu/express-ez-ts-router/publish.yml
 [npm-version]: https://img.shields.io/npm/v/express-ez-ts-router
 [github-license]: https://img.shields.io/npm/l/express-ez-ts-router
 [github-license-url]: https://github.com/doganhekimoglu/express-ez-ts-router/blob/master/LICENSE
