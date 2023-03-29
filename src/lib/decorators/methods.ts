@@ -1,9 +1,13 @@
 import { Methods } from './enums/Methods';
 import { MetadataKeys } from './enums/MetadataKeys';
+import { ErrorRequestHandler, RequestHandler } from 'express';
 
+interface RequestHandlerInterface extends PropertyDescriptor {
+  value?: RequestHandler | ErrorRequestHandler;
+}
 function routeBind(method: Methods) {
   return function (path: string) {
-    return function (target: any, key: string) {
+    return function (target: any, key: string, desc: RequestHandlerInterface) {
       Reflect.defineMetadata(MetadataKeys.path, path, target, key);
       Reflect.defineMetadata(MetadataKeys.method, method, target, key);
     };
