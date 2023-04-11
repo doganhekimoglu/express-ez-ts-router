@@ -2,7 +2,7 @@ import { Methods } from './enums/Methods';
 import { MetadataKeys } from './enums/MetadataKeys';
 import { ErrorRequestHandler, RequestHandler } from 'express';
 
-interface RequestHandlerInterface extends PropertyDescriptor {
+export interface RequestHandlerInterface extends PropertyDescriptor {
   value?: RequestHandler | ErrorRequestHandler;
 }
 function routeBind(method: Methods) {

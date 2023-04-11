@@ -1,6 +1,6 @@
 {
   "name": "express-ez-ts-router",
-  "version": "1.1.1",
+  "version": "1.1.4",
   "description": "Easy to use Typescript decorators for creating Express.js routes",
   "main": "./dist/cjs/index.js",
   "module": "./dist/cjs/index.js",

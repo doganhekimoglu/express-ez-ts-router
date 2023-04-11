@@ -1,8 +1,9 @@
 import { MetadataKeys } from './enums/MetadataKeys';
-import { RequestHandler } from 'express';
+import { ErrorRequestHandler, RequestHandler } from 'express';
+import { RequestHandlerInterface } from './methods';
 
-export function Use(middleware: RequestHandler) {
-  return function (target: any, key?: string) {
+export function Use(middleware: RequestHandler | ErrorRequestHandler) {
+  return function (target: any, key?: string, desc?: RequestHandlerInterface) {
     if (key) {
       const middleWares: RequestHandler[] = Reflect.getMetadata(MetadataKeys.middleware, target, key) || [];
       Reflect.defineMetadata(MetadataKeys.middleware, [...middleWares, middleware], target, key);
